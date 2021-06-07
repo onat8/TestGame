@@ -14,13 +14,15 @@ public class PlayerMov : MonoBehaviour
     public int cornCount;
     public ObjectPooling objPool;
     public GameObject corn;
+    public GameObject player;
+    public ParticleSystem flyCorn;
     
     // Start is called before the first frame update
     void Start()
     {
         scale = 2f;
+        flyCorn.Stop();
 
-        
     }
 
     // Update is called once per frame
@@ -31,12 +33,12 @@ public class PlayerMov : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             mouse = true;
-            transform.DOScale(scale, 0.3f).SetEase(Ease.Linear);
+            transform.DOScale(scale, 0.1f).SetEase(Ease.Linear);
         }
         else
         {
             mouse = false;
-            transform.DOScale(2f, 0.3f).SetEase(Ease.Linear);
+            transform.DOScale(2f, 0.1f).SetEase(Ease.Linear);
         }
     }
 
@@ -48,12 +50,15 @@ public class PlayerMov : MonoBehaviour
             {
                 if (scale == 0.65f)
                 {
-                    Debug.Log("die");
+                    
+                    Level.instance.SetMode(Level.PlayMode.LOSE);
+                    player.SetActive(false);
                 }
             }
             else
             {
                 scale = 1f;
+                
             }
         }
 
@@ -66,7 +71,9 @@ public class PlayerMov : MonoBehaviour
         {
             if(mouse == false)
             {
-                Debug.Log("Die");
+          
+                Level.instance.SetMode(Level.PlayMode.LOSE);
+                player.SetActive(false);
             }
         }
 
@@ -74,7 +81,9 @@ public class PlayerMov : MonoBehaviour
         {
             if(mouse)
             {
-                Debug.Log("Die");
+                
+                Level.instance.SetMode(Level.PlayMode.LOSE);
+                player.SetActive(false);
             }
         }
 
@@ -82,16 +91,21 @@ public class PlayerMov : MonoBehaviour
         {
             if (mouse)
             {
+                
                 CollectCorn();
             }
+            
 
         }
     }
 
     void CollectCorn()
     {
-        corn.SetActive(false);
+        
+        flyCorn.Play();
+        
         cornCount++;
+
     }
 
 }

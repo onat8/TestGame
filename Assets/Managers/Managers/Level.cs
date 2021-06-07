@@ -13,7 +13,7 @@ public class Level : MonoBehaviour
 {
     public PlayMode playMode;
     public static Level instance;
-   
+    
 
     public enum PlayMode
     {
@@ -69,7 +69,7 @@ public class Level : MonoBehaviour
 
     void Start()
     {
-        Level.instance.SetMode(PlayMode.LOSE);
+        //Level.instance.SetMode(PlayMode.LOSE);
 
     }
 
@@ -95,6 +95,7 @@ public class Level : MonoBehaviour
             case PlayMode.LOSE:
 
                 GameManager.instance.LosePanel();
+                
                 break;
           
 
