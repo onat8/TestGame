@@ -11,10 +11,13 @@ public class Spawner : MonoBehaviour
     public GameObject player;
     public GameObject smallpipe;
     public float distant;
+    
     // Start is called before the first frame update
     void Start()
     {
         PipeSpawner();
+        
+        //transform.position = new Vector3(0, 2, 0);
     }
 
     // Update is called once per frame
@@ -22,7 +25,7 @@ public class Spawner : MonoBehaviour
     {
         distant = transform.position.z - player.transform.position.z;
 
-        if(distant <= 10)
+        if(distant <= 30f)
         {
             PipeSpawner();
         }
@@ -34,26 +37,46 @@ public class Spawner : MonoBehaviour
     }
 
     public void PipeSpawner()
-    { 
-
-        
-         GameObject pipe = pipePool.GetPooledObject();
-         pipe.SetActive(true);
-        pipe.transform.parent = transform;
-         pipe.transform.position = transform.position;
-        
-         transform.position += Vector3.forward * 30f;
-
-        
-    }
-
-    void CornSpawner()
     {
-        GameObject corn = cornPool.GetPooledObject();
-        corn.SetActive(true);
 
+        for (int i = 0; i <= 2; i++)
+        {
 
-    }
+            GameObject pipe = pipePool.GetPooledObject();
+            pipe.SetActive(true);
+            
+            //pipe.transform.parent = transform;
+            pipe.transform.position = transform.position;
+            transform.position += Vector3.forward * 40f;
+        }
+        
+
+        
+    
+
+}
+
+    /*void CornSpawner()
+    {
+        
+
+        for (int i = 0; i <= 4; i++)
+        {
+            GameObject corn = cornPool.GetPooledObject();
+            corn.SetActive(true);
+
+            corn.transform.position = transform.position;
+
+            float rcorn = Random.Range(0, 10);
+            float mcorn = rcorn / 10;
+            Debug.Log(mcorn);
+            corn.transform.position += Vector3.forward * rcorn;
+        }
+        
+
+    }*/
+
+    
 
     void ObstacleSpawner()
     {

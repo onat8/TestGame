@@ -10,6 +10,7 @@ TagManager:
   - Pipe
   - SPipe
   - ObstacleInside
+  - Template
   layers:
   - Default
   - TransparentFX

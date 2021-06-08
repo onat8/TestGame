@@ -693,15 +693,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObjects: []
-  objectToPool: {fileID: 0}
-  amountToPool: 0
-  spipe: {fileID: 0}
-  lpipe: {fileID: 0}
+  objectToPool: {fileID: 8575563607027946521, guid: bc56999d73e954034b985be4a0030006,
+    type: 3}
+  amountToPool: 40
+  spipe01: {fileID: 0}
+  spipe02: {fileID: 0}
+  lpipe01: {fileID: 0}
+  lpipe02: {fileID: 0}
+  lpipe03: {fileID: 0}
   pipe: 0
-  corn: 1
-  corn1LargePipe: {fileID: 0}
-  cornSmallPipe: {fileID: 0}
-  checkPipe: {fileID: 0}
 --- !u!4 &1226046207
 Transform:
   m_ObjectHideFlags: 0
@@ -709,8 +709,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226046205}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.49714375, y: -1.6701078, z: -3.9640484}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1375209142}
@@ -749,13 +749,12 @@ MonoBehaviour:
   objectToPool: {fileID: 6143817268522361948, guid: 00ef46397b5ac4f00afdc67438ef5f16,
     type: 3}
   amountToPool: 100
-  spipe: {fileID: 0}
-  lpipe: {fileID: 0}
+  spipe01: {fileID: 0}
+  spipe02: {fileID: 0}
+  lpipe01: {fileID: 0}
+  lpipe02: {fileID: 0}
+  lpipe03: {fileID: 0}
   pipe: 0
-  corn: 0
-  corn1LargePipe: {fileID: 0}
-  cornSmallPipe: {fileID: 0}
-  checkPipe: {fileID: 0}
 --- !u!4 &1282238028
 Transform:
   m_ObjectHideFlags: 0
@@ -770,6 +769,99 @@ Transform:
   m_Father: {fileID: 1375209142}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1334067662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1334067663}
+  - component: {fileID: 1334067666}
+  - component: {fileID: 1334067665}
+  - component: {fileID: 1334067664}
+  m_Layer: 0
+  m_Name: Cleaner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1334067663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334067662}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -68.51251, z: 0}
+  m_LocalScale: {x: 10.784999, y: 6.745927, z: 1.2499996}
+  m_Children: []
+  m_Father: {fileID: 3806648969287151070}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1334067664
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334067662}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1334067665
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334067662}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1334067666
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334067662}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1352694519
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,14 +907,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObjects: []
   objectToPool: {fileID: 0}
-  amountToPool: 30
-  spipe: {fileID: 4060926769133300169, guid: 15199b2acf75541a6834bcee54785f3c, type: 3}
-  lpipe: {fileID: 8326649981568031761, guid: 38b4911a26e0048eb946c8a08f78eb01, type: 3}
+  amountToPool: 200
+  spipe01: {fileID: 216198901154704898, guid: 1404714ecc8967d46b161a1d01f35155, type: 3}
+  spipe02: {fileID: 5821483093038162000, guid: ff68c6367c6b0d14491171e88b13b793, type: 3}
+  lpipe01: {fileID: 4340101711198846815, guid: 0914cd6c6b1b0854d8ae2b981cd4eb3b, type: 3}
+  lpipe02: {fileID: 5322252564912680525, guid: d0bff27669a420c429610c70649f2d17, type: 3}
+  lpipe03: {fileID: 417937864151658845, guid: c603f292e7d3920498fe0317ca14a5e7, type: 3}
   pipe: 1
-  corn: 0
-  corn1LargePipe: {fileID: 0}
-  cornSmallPipe: {fileID: 0}
-  checkPipe: {fileID: 0}
 --- !u!1 &1375209141
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,7 +972,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935118858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.8344965, y: 7.1887856, z: -9.02031}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -910,8 +1001,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054120913}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33.689697, y: 5.0722237, z: 14.664807}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1375209142}
@@ -962,7 +1053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pipePool: {fileID: 1352694521}
   obstaclePool: {fileID: 0}
-  cornPool: {fileID: 1352694521}
+  cornPool: {fileID: 1226046206}
   player: {fileID: 4582482702707980132}
   smallpipe: {fileID: 4060926769133300169, guid: 15199b2acf75541a6834bcee54785f3c,
     type: 3}

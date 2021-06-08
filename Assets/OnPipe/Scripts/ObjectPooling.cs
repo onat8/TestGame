@@ -7,13 +7,15 @@ public class ObjectPooling : MonoBehaviour
     public List<GameObject> pooledObjects;
     public GameObject objectToPool;
     public int amountToPool;
-    public GameObject spipe;
-    public GameObject lpipe;
+    public GameObject spipe01;
+    public GameObject spipe02;
+    public GameObject lpipe01;
+    public GameObject lpipe02;
+    public GameObject lpipe03;
+    
     public bool pipe;
-    public bool corn;
-    public GameObject corn1LargePipe;
-    public GameObject cornSmallPipe;
-    public PlayerMov checkPipe;
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -25,19 +27,31 @@ public class ObjectPooling : MonoBehaviour
         {
             if (pipe)
             {
-                int chance = Random.Range(0, 4);
-                Debug.Log(chance);
-                if (chance < 2)
+                int chance = Random.Range(0, 5);
+                
+                switch (chance)
                 {
-                    objectToPool = spipe;
-                }
-                else if (chance >= 2)
-                {
-                    objectToPool = lpipe;
+                    default:
+                        objectToPool = lpipe01;
+                        break;
+                    case 1:
+                        objectToPool = spipe01;
+                        break;
+                    case 2:
+                        objectToPool = lpipe02;
+                        break;
+                    case 3:
+                        objectToPool = lpipe03;
+                        break;
+                    case 4:
+                        objectToPool = spipe02;
+                        break;
                 }
 
 
             }
+
+
 
             GameObject obj = (GameObject)Instantiate(objectToPool);
             obj.transform.parent = grave.transform;

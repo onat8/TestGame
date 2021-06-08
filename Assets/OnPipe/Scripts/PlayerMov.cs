@@ -18,6 +18,7 @@ public class PlayerMov : MonoBehaviour
     public float cornSlider;
     
     
+    
     void Start()
     {
         scale = new Vector3(1.4f, 0.8f, 1.4f);
@@ -48,7 +49,7 @@ public class PlayerMov : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Pipe"))
         {
@@ -117,7 +118,7 @@ public class PlayerMov : MonoBehaviour
 
         if (cornCount >= 0 && cornCount < 63)
         {
-            cornSlider = cornSlider + 0.0002f;
+            cornSlider = cornSlider + 0.0001f;
         }else if(cornCount >= 63 && cornCount < 84){
             cornSlider = (cornSlider + 0.0003f) * 2;
         }else if(cornCount >= 84 && cornCount < 105)
