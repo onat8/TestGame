@@ -37,11 +37,15 @@ public class PlayerMov : MonoBehaviour
             mouse = true;
             transform.DOScale(scale, 0.1f).SetEase(Ease.Linear);
         }
+
+
         else
         {
             mouse = false;
             transform.DOScale(new Vector3(1.4f, 0.8f, 1.4f), 0.1f).SetEase(Ease.Linear);
         }
+
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -109,7 +113,7 @@ public class PlayerMov : MonoBehaviour
         GameObject flyCorn = objPool.GetPooledObject();
         flyCorn.SetActive(true);
         flyCorn.transform.parent = transform;
-        flyCorn.transform.localPosition = Vector3.zero;
+        flyCorn.transform.localPosition = Vector3.down;
 
         if (cornCount >= 0 && cornCount < 63)
         {
@@ -126,10 +130,6 @@ public class PlayerMov : MonoBehaviour
 
     }
 
-    void PipeSpawn()
-    {
-
-    }
-
+    
 
 }

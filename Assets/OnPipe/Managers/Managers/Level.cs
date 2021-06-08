@@ -48,6 +48,7 @@ public class Level : MonoBehaviour
     private void Awake()
     {
         
+        
         instance = this;
 
         if (GameManager.instance == null)
@@ -134,6 +135,8 @@ public class Level : MonoBehaviour
 
     }
 
-   
+    
+
+
 
 }
