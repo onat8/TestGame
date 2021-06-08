@@ -22,9 +22,9 @@ public class PlayerMov : MonoBehaviour
     void Start()
     {
         scale = new Vector3(1.4f, 0.8f, 1.4f);
-        
-        
-        
+        Level.instance.SetMode(Level.PlayMode.STARTED);
+
+
 
     }
 
@@ -32,11 +32,14 @@ public class PlayerMov : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.up * speed * Time.deltaTime);
+        if(Input.GetMouseButtonDown(0))
+            Level.instance.SetMode(Level.PlayMode.OBSTARTED);
 
         if (Input.GetMouseButton(0))
         {
             mouse = true;
             transform.DOScale(scale, 0.1f).SetEase(Ease.Linear);
+            
         }
 
 
@@ -118,10 +121,10 @@ public class PlayerMov : MonoBehaviour
 
         if (cornCount >= 0 && cornCount < 63)
         {
-            cornSlider = cornSlider + 0.0001f;
-        }else if(cornCount >= 63 && cornCount < 84){
+            cornSlider = cornSlider + 0.00001f;
+        }else if(cornCount >= 350 && cornCount < 460){
             cornSlider = (cornSlider + 0.0003f) * 2;
-        }else if(cornCount >= 84 && cornCount < 105)
+        }else if(cornCount >= 560 && cornCount < 600)
         {
             cornSlider = (cornSlider + 0.0003f) * 3;
         }

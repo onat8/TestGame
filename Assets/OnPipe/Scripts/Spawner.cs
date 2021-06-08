@@ -12,15 +12,16 @@ public class Spawner : MonoBehaviour
     public GameObject smallpipe;
     public float distant;
     
-    // Start is called before the first frame update
+    
     void Start()
     {
-        PipeSpawner();
+        if (Level.instance.playMode == Level.PlayMode.STARTED)
+            PipeSpawner();
         
         //transform.position = new Vector3(0, 2, 0);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         distant = transform.position.z - player.transform.position.z;
@@ -30,16 +31,16 @@ public class Spawner : MonoBehaviour
             PipeSpawner();
         }
 
-        //if(Level.instance.playMode == Level.PlayMode.STARTED)
-        //{
-            //ObstacleSpawner();
-        //}
+        if(Level.instance.playMode == Level.PlayMode.OBSTARTED)
+        {
+            Debug.Log("OBSTARTED MODE ACTİVE");
+        }
     }
 
     public void PipeSpawner()
     {
 
-        for (int i = 0; i <= 2; i++)
+        for (int i = 0; i < 1; i++)
         {
 
             GameObject pipe = pipePool.GetPooledObject();

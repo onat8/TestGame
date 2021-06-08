@@ -27,6 +27,7 @@ public class Level : MonoBehaviour
     {
         NOT_STARTED,
         STARTED,
+        OBSTARTED,
         LOSE,
         FINISH,
         
@@ -112,6 +113,9 @@ public class Level : MonoBehaviour
         {
             case PlayMode.NOT_STARTED:
                
+                break;
+            case PlayMode.OBSTARTED:
+
                 break;
             case PlayMode.STARTED:
               

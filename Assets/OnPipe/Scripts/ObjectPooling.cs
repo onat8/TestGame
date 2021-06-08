@@ -12,6 +12,11 @@ public class ObjectPooling : MonoBehaviour
     public GameObject lpipe01;
     public GameObject lpipe02;
     public GameObject lpipe03;
+    public GameObject lopipe01;
+    public GameObject lopipe02;
+    public GameObject lopipe03;
+    public GameObject lopipe04;
+    public GameObject sopipe01;
     
     public bool pipe;
     
@@ -27,27 +32,53 @@ public class ObjectPooling : MonoBehaviour
         {
             if (pipe)
             {
-                int chance = Random.Range(0, 5);
                 
-                switch (chance)
-                {
-                    default:
-                        objectToPool = lpipe01;
-                        break;
-                    case 1:
-                        objectToPool = spipe01;
-                        break;
-                    case 2:
-                        objectToPool = lpipe02;
-                        break;
-                    case 3:
-                        objectToPool = lpipe03;
-                        break;
-                    case 4:
-                        objectToPool = spipe02;
-                        break;
-                }
+                
+                    int chance = Random.Range(0, 5);
 
+                    switch (chance)
+                    {
+                        default:
+                            objectToPool = lpipe01;
+                            break;
+                        case 1:
+                            objectToPool = spipe01;
+                            break;
+                        case 2:
+                            objectToPool = lpipe02;
+                            break;
+                        case 3:
+                            objectToPool = lpipe03;
+                            break;
+                        case 4:
+                            objectToPool = spipe02;
+                            break;
+                    }
+                
+
+                
+                    int obchance = Random.Range(0, 4);
+
+                    switch (obchance)
+                    {
+                        default:
+                            objectToPool = lopipe01;
+                            break;
+                        case 1:
+                            objectToPool = lopipe02;
+                            break;
+                        case 2:
+                            objectToPool = lopipe03;
+                            break;
+                        case 3:
+                            objectToPool = lopipe04;
+                            break;
+                        case 4:
+                            objectToPool = sopipe01;
+                            break;
+
+                    }
+                
 
             }
 
