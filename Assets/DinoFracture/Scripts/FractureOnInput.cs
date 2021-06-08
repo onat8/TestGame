@@ -9,7 +9,7 @@ public class FractureOnInput : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(Key))
+        if (Level.instance.playMode == Level.PlayMode.LOSE)
         {
             GetComponent<FractureGeometry>().Fracture();
         }

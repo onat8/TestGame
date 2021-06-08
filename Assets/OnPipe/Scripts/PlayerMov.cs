@@ -11,11 +11,11 @@ public class PlayerMov : MonoBehaviour
 
     public Vector3 scale;
     public bool mouse;
-    public int cornCount;
+    public float cornCount;
     public ObjectPooling objPool;
     public GameObject corn;
     public GameObject player;
-
+    public float cornSlider;
     
     
     void Start()
@@ -54,7 +54,7 @@ public class PlayerMov : MonoBehaviour
                 {
                     
                     Level.instance.SetMode(Level.PlayMode.LOSE);
-                    player.SetActive(false);
+                   
                 }
             }
             else
@@ -77,7 +77,7 @@ public class PlayerMov : MonoBehaviour
             {
           
                 Level.instance.SetMode(Level.PlayMode.LOSE);
-                player.SetActive(false);
+                
             }
         }
 
@@ -87,7 +87,7 @@ public class PlayerMov : MonoBehaviour
             {
                 
                 Level.instance.SetMode(Level.PlayMode.LOSE);
-                player.SetActive(false);
+                
             }
         }
 
@@ -110,9 +110,24 @@ public class PlayerMov : MonoBehaviour
         flyCorn.SetActive(true);
         flyCorn.transform.parent = transform;
         flyCorn.transform.localPosition = Vector3.zero;
+
+        if (cornCount >= 0 && cornCount < 63)
+        {
+            cornSlider = cornSlider + 0.0002f;
+        }else if(cornCount >= 63 && cornCount < 84){
+            cornSlider = (cornSlider + 0.0003f) * 2;
+        }else if(cornCount >= 84 && cornCount < 105)
+        {
+            cornSlider = (cornSlider + 0.0003f) * 3;
+        }
         
-        
-        cornCount++;
+
+        GameManager.instance.slider.fillAmount += cornSlider;
+
+    }
+
+    void PipeSpawn()
+    {
 
     }
 

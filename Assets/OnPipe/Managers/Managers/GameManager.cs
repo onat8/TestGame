@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject gameView;
 
-
+    public Image slider;
     [SerializeField] List<Scene> Levels;
     [SerializeField] Text levelText;
     public TextMeshProUGUI woodCount;
@@ -61,8 +61,8 @@ public class GameManager : MonoBehaviour
         //Elephant.LevelStarted(DataManager.PlayerData.Level);
         Debug.Log(DataManager.PlayerData.Level);
 
-
-
+        
+        slider.fillAmount = 0;
         LoadingManager.instance.loadingScreen.SetActive(false);
 
 
