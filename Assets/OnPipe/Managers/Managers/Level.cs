@@ -27,8 +27,8 @@ public class Level : MonoBehaviour
     {
         NOT_STARTED,
         STARTED,
-        OBSTARTED,
         LOSE,
+        END,
         FINISH,
         
     }
@@ -99,7 +99,7 @@ public class Level : MonoBehaviour
 
     void Start()
     {
-        //Level.instance.SetMode(PlayMode.LOSE);
+        
 
     }
 
@@ -114,15 +114,22 @@ public class Level : MonoBehaviour
             case PlayMode.NOT_STARTED:
                
                 break;
-            case PlayMode.OBSTARTED:
-
-                break;
+                
             case PlayMode.STARTED:
               
                 break;
-           
+
+            case PlayMode.END:
+
+                break;
+
             case PlayMode.FINISH:
 
+                Invoke(nameof(PlayerDeath), 3f);
+                player.speed = 24;
+                
+                cm.Follow = null;
+                GameManager.instance.WinPanel();
                
                 break;
            
@@ -137,6 +144,12 @@ public class Level : MonoBehaviour
 
         }
 
+    }
+
+
+    void PlayerDeath()
+    {
+        player.gameObject.SetActive(false);
     }
 
     

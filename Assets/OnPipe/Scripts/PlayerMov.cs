@@ -16,15 +16,16 @@ public class PlayerMov : MonoBehaviour
     public GameObject corn;
     public GameObject player;
     public float cornSlider;
+    public GameManager slider;
+    
     
     
     
     void Start()
     {
         scale = new Vector3(1.4f, 0.8f, 1.4f);
-        Level.instance.SetMode(Level.PlayMode.STARTED);
 
-
+        
 
     }
 
@@ -32,8 +33,8 @@ public class PlayerMov : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.up * speed * Time.deltaTime);
-        if(Input.GetMouseButtonDown(0))
-            Level.instance.SetMode(Level.PlayMode.OBSTARTED);
+
+       
 
         if (Input.GetMouseButton(0))
         {
@@ -49,7 +50,8 @@ public class PlayerMov : MonoBehaviour
             transform.DOScale(new Vector3(1.4f, 0.8f, 1.4f), 0.1f).SetEase(Ease.Linear);
         }
 
-        
+
+
     }
 
     public void OnTriggerEnter(Collider other)
@@ -60,9 +62,11 @@ public class PlayerMov : MonoBehaviour
             {
                 if (scale.x == 0.65f)
                 {
-                    
+
                     Level.instance.SetMode(Level.PlayMode.LOSE);
-                   
+                    speed = 0;
+                    
+                    Debug.Log("pipe die");
                 }
             }
             else
@@ -83,9 +87,9 @@ public class PlayerMov : MonoBehaviour
         {
             if(mouse == false)
             {
-          
+                Debug.Log("obs");
                 Level.instance.SetMode(Level.PlayMode.LOSE);
-                
+                speed = 0;
             }
         }
 
@@ -93,9 +97,9 @@ public class PlayerMov : MonoBehaviour
         {
             if(mouse)
             {
-                
+                Debug.Log("obs inside");
                 Level.instance.SetMode(Level.PlayMode.LOSE);
-                
+                speed = 0;
             }
         }
 
@@ -110,29 +114,46 @@ public class PlayerMov : MonoBehaviour
             
 
         }
+
+        if (other.CompareTag("Win"))
+        {
+            Level.instance.SetMode(Level.PlayMode.FINISH);
+        }
     }
-    //If 
+    //Corn sprite and corn slider
     void CollectCorn()
     {
+        
+        
         GameObject flyCorn = objPool.GetPooledObject();
         flyCorn.SetActive(true);
+        
         flyCorn.transform.parent = transform;
         flyCorn.transform.localPosition = Vector3.down;
-
+        
         if (cornCount >= 0 && cornCount < 63)
         {
-            cornSlider = cornSlider + 0.00001f;
+            cornSlider += 0.001f;
         }else if(cornCount >= 350 && cornCount < 460){
-            cornSlider = (cornSlider + 0.0003f) * 2;
+            cornSlider = (cornSlider + 0.001f) * 2;
         }else if(cornCount >= 560 && cornCount < 600)
         {
-            cornSlider = (cornSlider + 0.0003f) * 3;
+            cornSlider = (cornSlider + 0.001f) * 3;
+        }
+
+
+        if (cornSlider >= 1f)
+        {
+            Level.instance.SetMode(Level.PlayMode.END);
+
         }
         
 
-        GameManager.instance.slider.fillAmount += cornSlider;
+        GameManager.instance.slider.fillAmount = cornSlider;
 
     }
+
+    
 
     
 

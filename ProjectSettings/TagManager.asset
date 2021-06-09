@@ -11,6 +11,8 @@ TagManager:
   - SPipe
   - ObstacleInside
   - Template
+  - CornStacs
+  - Win
   layers:
   - Default
   - TransparentFX

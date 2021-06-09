@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
-//using ElephantSDK;
+
 
 
 public class GameManager : MonoBehaviour
@@ -23,7 +23,9 @@ public class GameManager : MonoBehaviour
     public GameObject losePanel;
     [SerializeField] GameObject startbutton;
     public Image levelBar;
-    // Start is called before the first frame update
+    public PlayerMov pslider;
+
+
     void Awake()
     {
         instance = this;
@@ -56,15 +58,9 @@ public class GameManager : MonoBehaviour
 
     public void OnLevelEnabled()
     {
-
-       // startbutton.SetActive(true);
-        //Elephant.LevelStarted(DataManager.PlayerData.Level);
-        Debug.Log(DataManager.PlayerData.Level);
-
-        
+        startbutton.SetActive(true);
         slider.fillAmount = 0;
         LoadingManager.instance.loadingScreen.SetActive(false);
-
 
         levelBar.fillAmount = 0;
         gameView.gameObject.SetActive(true);
@@ -104,45 +100,37 @@ public class GameManager : MonoBehaviour
          };
     }
 
+    public void CSlider()
+    {
+        
+        
+    }
+
     public void Restart()
     {
         SceneManager.UnloadSceneAsync(Level.instance.scene).completed += (op) =>
         {
             SceneManager.LoadSceneAsync("Level " + DataManager.PlayerData.Level, LoadSceneMode.Additive).completed += (op2) =>
             {
-
-
                 losePanel.SetActive(false);
+                winPanel.SetActive(false);
             };
 
         };
     }
-
-
-
     public void WinPanel()
     {
-
         gameView.gameObject.SetActive(false);
         winPanel.gameObject.SetActive(true);
-        //Elephant.LevelCompleted(DataManager.PlayerData.Level);
     }
-
-
     public void LosePanel()
     {
         gameView.gameObject.SetActive(false);
         losePanel.gameObject.SetActive(true);
-
-      //  Elephant.LevelFailed(DataManager.PlayerData.Level);
     }
     public void StartGame()
     {
-       
         Level.instance.SetMode(Level.PlayMode.STARTED);
-        
         startbutton.SetActive(false);
     }
-
-
 }

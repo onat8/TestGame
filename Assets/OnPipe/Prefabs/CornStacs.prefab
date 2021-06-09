@@ -1964,7 +1964,7 @@ GameObject:
   - component: {fileID: 8204853572286837135}
   m_Layer: 0
   m_Name: CornStacs
-  m_TagString: Untagged
+  m_TagString: CornStacs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

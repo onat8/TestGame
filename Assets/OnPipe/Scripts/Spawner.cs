@@ -10,77 +10,98 @@ public class Spawner : MonoBehaviour
     
     public GameObject player;
     public GameObject smallpipe;
+    public GameObject winPipe;
     public float distant;
+    public ObjectPooling obsCheck;
+    public bool functionCalled = false;
     
     
     void Start()
     {
-        if (Level.instance.playMode == Level.PlayMode.STARTED)
+        if (Level.instance.playMode == Level.PlayMode.NOT_STARTED)
+        {
             PipeSpawner();
+        }
         
-        //transform.position = new Vector3(0, 2, 0);
     }
 
     
     void Update()
     {
+
         distant = transform.position.z - player.transform.position.z;
 
-        if(distant <= 30f)
+        if(distant <= 30f && ( Level.instance.playMode == Level.PlayMode.STARTED || Level.instance.playMode == Level.PlayMode.NOT_STARTED))
         {
-            PipeSpawner();
+            
+            if (Level.instance.playMode == Level.PlayMode.STARTED)
+            {
+                ObstacleSpawner();
+            }
+            else
+            {
+                PipeSpawner();
+            }
+
+
+        }
+        else if (Level.instance.playMode == Level.PlayMode.END)
+        {
+            Debug.Log("End");
+            Win();
         }
 
-        if(Level.instance.playMode == Level.PlayMode.OBSTARTED)
-        {
-            Debug.Log("OBSTARTED MODE ACTİVE");
-        }
+
+
     }
 
     public void PipeSpawner()
     {
+        GameObject pipe = pipePool.GetPooledObject();
+        pipe.SetActive(true);
 
-        for (int i = 0; i < 1; i++)
+        foreach (Transform cornParent in pipe.transform)
         {
-
-            GameObject pipe = pipePool.GetPooledObject();
-            pipe.SetActive(true);
+            if (cornParent.gameObject.CompareTag("Corn"))
+            {
+                foreach (Transform corn in cornParent.transform)
+                {
+                    corn.gameObject.SetActive(true);
+                }
+            }
             
-            //pipe.transform.parent = transform;
-            pipe.transform.position = transform.position;
-            transform.position += Vector3.forward * 40f;
         }
-        
+        //pipe.transform.parent = transform;
+        pipe.transform.position = transform.position;
+        transform.position += Vector3.forward * 40f;
 
-        
-    
-
-}
-
-    /*void CornSpawner()
-    {
-        
-
-        for (int i = 0; i <= 4; i++)
-        {
-            GameObject corn = cornPool.GetPooledObject();
-            corn.SetActive(true);
-
-            corn.transform.position = transform.position;
-
-            float rcorn = Random.Range(0, 10);
-            float mcorn = rcorn / 10;
-            Debug.Log(mcorn);
-            corn.transform.position += Vector3.forward * rcorn;
-        }
-        
-
-    }*/
-
-    
+    }
 
     void ObstacleSpawner()
     {
+        GameObject pipe = obstaclePool.GetPooledObject();
+        pipe.SetActive(true);
+        foreach (Transform cornParent in pipe.transform)
+        {
+            if (cornParent.gameObject.CompareTag("Corn"))
+            {
+                foreach (Transform corn in cornParent.transform)
+                {
+                    corn.gameObject.SetActive(true);
+                }
+            }
+
+        }
+        //pipe.transform.parent = transform;
+        pipe.transform.position = transform.position;
+        transform.position += Vector3.forward * 40f;
+
+    }
+
+    void Win()
+    {
+        winPipe.transform.position = transform.position;
+
 
     }
 }
