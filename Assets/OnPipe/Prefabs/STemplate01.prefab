@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 1125326046584509005}
   m_Layer: 0
   m_Name: SmallCornStacs (2)
-  m_TagString: Untagged
+  m_TagString: CornStacs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -385,8 +385,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.915155, y: 11.432384, z: 39.880684}
+  m_Center: {x: 0.08426595, y: 4.511414, z: -0.021251678}
 --- !u!1 &232702139391340317
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 9002746915315029287}
   m_Layer: 0
   m_Name: SmallCornStacs (1)
-  m_TagString: Untagged
+  m_TagString: CornStacs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2960,7 +2960,7 @@ GameObject:
   - component: {fileID: 3796490622344507789}
   m_Layer: 0
   m_Name: SmallCornStacs (4)
-  m_TagString: Untagged
+  m_TagString: CornStacs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6545,7 +6545,7 @@ GameObject:
   - component: {fileID: 1142893231621019639}
   m_Layer: 0
   m_Name: SmallCornStacs (6)
-  m_TagString: Untagged
+  m_TagString: CornStacs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7712,7 +7712,7 @@ GameObject:
   - component: {fileID: 6766965286682990898}
   m_Layer: 0
   m_Name: SmallCornStacs
-  m_TagString: Untagged
+  m_TagString: CornStacs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13901,7 +13901,7 @@ GameObject:
   - component: {fileID: 6047486278284087417}
   m_Layer: 0
   m_Name: SmallCornStacs (3)
-  m_TagString: Untagged
+  m_TagString: CornStacs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15533,7 +15533,7 @@ GameObject:
   - component: {fileID: 1264225139694748664}
   m_Layer: 0
   m_Name: SmallCornStacs (5)
-  m_TagString: Untagged
+  m_TagString: CornStacs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15677,7 +15677,7 @@ GameObject:
   - component: {fileID: 3953638548116456034}
   m_Layer: 0
   m_Name: SmallCornStacs (7)
-  m_TagString: Untagged
+  m_TagString: CornStacs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

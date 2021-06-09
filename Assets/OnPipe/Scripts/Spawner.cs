@@ -62,7 +62,7 @@ public class Spawner : MonoBehaviour
 
         foreach (Transform cornParent in pipe.transform)
         {
-            if (cornParent.gameObject.CompareTag("Corn"))
+            if (cornParent.gameObject.CompareTag("CornStacs"))
             {
                 foreach (Transform corn in cornParent.transform)
                 {
@@ -83,7 +83,7 @@ public class Spawner : MonoBehaviour
         pipe.SetActive(true);
         foreach (Transform cornParent in pipe.transform)
         {
-            if (cornParent.gameObject.CompareTag("Corn"))
+            if (cornParent.gameObject.CompareTag("CornStacs"))
             {
                 foreach (Transform corn in cornParent.transform)
                 {
