@@ -129,7 +129,7 @@ public class PlayerMov : MonoBehaviour
         flyCorn.SetActive(true);
         
         flyCorn.transform.parent = transform;
-        flyCorn.transform.localPosition = Vector3.down;
+        flyCorn.transform.localPosition = Vector3.down * 0.01f;
         
         if (cornCount >= 0 && cornCount < 63)
         {
